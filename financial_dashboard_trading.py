@@ -31,7 +31,7 @@ html_temp = """
 stc.html(html_temp)
 
 ###### 讀取資料
-@st.cache_data(ttl=3600, show_spinner="正在加載資料...")  ## Add the caching decorator
+@st.cache_data(ttl=3600, show_spinner="正在加載資料...")  
 def load_data(path):
     df = pd.read_pickle(path)
     return df
