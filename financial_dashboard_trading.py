@@ -27,7 +27,7 @@ html_temp = """
 		<h1 style="color:black;text-align:center;">金融大數據hw </h1>
 		<h2 style="color:black;text-align:center;">陳韋安 資科三B </h2>
 		</div>
-		"""
+	    """
 stc.html(html_temp)
 
 
