@@ -35,8 +35,6 @@ stc.html(html_temp)
 def load_data(path):
     df = pd.read_pickle(path)
     return df
-# ##### 讀取 excel 檔
-# df_original = pd.read_excel("kbars_2330_2022-01-01-2022-11-18.xlsx")
 
 
 
@@ -47,50 +45,44 @@ st.subheader("選擇金融商品: ")
 choices = ['鴻海: 2020.1.1 至 2024.4.30', '聯發科: 2020.1.1 至 2024.4.30', '廣達電: 2020.1.1 至 2024.4.30', '聯華電:2020.1.1 至 2024.4.30', '大立光電:2020.1.1 至 2024.4.30']
 choice = st.selectbox('選擇金融商品', choices, index=0)
 ##### 读取Pickle文件
-if choice == '台積電: 2022.1.1 至 2024.4.9':
-    df_original = load_data('kbars_2330_2022-01-01-2024-04-09.pkl')
-    # df_original = load_data('kbars_2330_2022-01-01-2024-04-09.pkl')
-    # df_original = load_data('kbars_2330_2022-01-01-2022-11-18.pkl')  
-    # df_original = pd.read_pickle('kbars_2330_2022-01-01-2022-11-18.pkl')
-    #df.columns  ## Index(['Unnamed: 0', 'time', 'open', 'low', 'high', 'close', 'volume','amount'], dtype='object')
-    # df_original = df_original.drop('Unnamed: 0',axis=1)
-# if choice == '大台指2024.12到期: 2024.1 至 2024.4.9':
-#     df_original = load_data('kbars_TXF202412_2024-01-01-2024-04-09.pkl')  
-if choice == '大台指期貨2024.12到期: 2023.12 至 2024.4.11':
-    df_original = load_data('kbars_TXF202412_2023-12-21-2024-04-11.pkl')
-if choice == '小台指期貨2024.12到期: 2023.12 至 2024.4.11':
-    df_original = load_data('kbars_MXF202412_2023-12-21-2024-04-11.pkl')
-if choice == '英業達2020.1.2 至 2024.4.12':
-    df_original = load_data('kbars_2356_2020-01-01-2024-04-12.pkl')
-if choice == '堤維西2020.1.2 至 2024.4.12':
-    df_original = load_data('kbars_1522_2020-01-01-2024-04-12.pkl')
+if choice == '鴻海: 2020.1.1 至 2024.4.30':
+    df_original = load_data('kbars_2317_2020-01-01-2024-04-30')
+     
+if choice == '聯發科: 2020.1.1 至 2024.4.30':
+    df_original = load_data('kbars_2454_2020-01-01-2024-04-30')
+if choice == '廣達電: 2020.1.1 至 2024.4.30':
+    df_original = load_data('kbars_2382_2020-01-01-2024-04-30')
+if choice == '聯華電:2020.1.1 至 2024.4.30':
+    df_original = load_data('kbars_2303_2020-01-01-2024-04-30')
+if choice == '大立光電:2020.1.1 至 2024.4.30':
+    df_original = load_data('kbars_3008_2020-01-01-2024-04-30')
 
 
 
 
 ###### 選擇資料區間
 st.subheader("選擇資料時間區間")
-if choice == '台積電: 2022.1.1 至 2024.4.9':
-    start_date = st.text_input('輸入開始日期(日期格式: 2022-01-01), 區間:2022-01-01 至 2024-04-09', '2022-01-01')
-    end_date = st.text_input('輸入結束日期 (日期格式: 2024-04-09), 區間:2022-01-01 至 2024-04-09', '2024-04-09')
-if choice == '大台指期貨2024.12到期: 2023.12 至 2024.4.11':
-    start_date = st.text_input('輸入開始日期(日期格式: 2023-12-21), 區間:2023-12-21 至 2024-04-11', '2023-12-21')
-    end_date = st.text_input('輸入結束日期 (日期格式: 2024-04-11), 區間:2023-12-21 至 2024-04-11', '2024-04-11')
-if choice == '小台指期貨2024.12到期: 2023.12 至 2024.4.11':
-    start_date = st.text_input('輸入開始日期(日期格式: 2023-12-21), 區間:2023-12-21 至 2024-04-11', '2023-12-21')
-    end_date = st.text_input('輸入結束日期 (日期格式: 2024-04-11), 區間:2023-12-21 至 2024-04-11', '2024-04-11')
-if choice == '英業達2020.1.2 至 2024.4.12':
-    start_date = st.text_input('輸入開始日期(日期格式: 2020-01-02), 區間:2020-01-02 至 2024-04-12', '2020-01-02')
-    end_date = st.text_input('輸入結束日期 (日期格式: 2024-04-12), 區間:2020-01-02 至 2024-04-12', '2024-04-12')
-if choice == '堤維西2020.1.2 至 2024.4.12':
-    start_date = st.text_input('輸入開始日期(日期格式: 2020-01-02), 區間:2020-01-02 至 2024-04-12', '2020-01-02')
-    end_date = st.text_input('輸入結束日期 (日期格式: 2024-04-12), 區間:2020-01-02 至 2024-04-12', '2024-04-12')
+if choice == '鴻海: 2020.1.1 至 2024.4.30':
+    start_date = st.text_input('輸入開始日期(日期格式: 2020-01-01), 區間:2020-01-01 至 2024-04-30', '2020-01-01')
+    end_date = st.text_input('輸入結束日期 (日期格式: 2024-04-30), 區間:2022-01-01 至 2024-04-30', '2024-04-30')
+if choice == '聯發科: 2020.1.1 至 2024.4.30':
+    start_date = st.text_input('輸入開始日期(日期格式: 2020-01-01), 區間:2020-01-01 至 2024-04-30', '2020-01-01')
+    end_date = st.text_input('輸入結束日期 (日期格式: 2024-04-30), 區間:2022-01-01 至 2024-04-30', '2024-04-30')
+if choice == '廣達電: 2020.1.1 至 2024.4.30':
+    start_date = st.text_input('輸入開始日期(日期格式: 2020-01-01), 區間:2020-01-01 至 2024-04-30', '2020-01-01')
+    end_date = st.text_input('輸入結束日期 (日期格式: 2024-04-30), 區間:2022-01-01 至 2024-04-30', '2024-04-30')
+if choice == '聯華電:2020.1.1 至 2024.4.30':
+    start_date = st.text_input('輸入開始日期(日期格式: 2020-01-01), 區間:2020-01-01 至 2024-04-30', '2020-01-01')
+    end_date = st.text_input('輸入結束日期 (日期格式: 2024-04-30), 區間:2022-01-01 至 2024-04-30', '2024-04-30')
+if choice == '大立光電:2020.1.1 至 2024.4.30':
+    start_date = st.text_input('輸入開始日期(日期格式: 2020-01-01), 區間:2020-01-01 至 2024-04-30', '2020-01-01')
+    end_date = st.text_input('輸入結束日期 (日期格式: 2024-04-30), 區間:2022-01-01 至 2024-04-30', '2024-04-30')
 
 
 
 start_date = datetime.datetime.strptime(start_date,'%Y-%m-%d')
 end_date = datetime.datetime.strptime(end_date,'%Y-%m-%d')
-# 使用条件筛选选择时间区间的数据
+
 df = df_original[(df_original['time'] >= start_date) & (df_original['time'] <= end_date)]
 
 
@@ -249,20 +241,7 @@ KBar_df['RSI_Middle']=np.array([50]*len(KBar_dic['time']))
 last_nan_index_RSI = KBar_df['RSI_long'][::-1].index[KBar_df['RSI_long'][::-1].apply(pd.isna)][0]
 
 
-# ##### 逆勢策略
-# #### 建立部位管理物件
-# OrderRecord=Record() 
-# #### 計算 RSI指標, 天花板與地板
-# RSIPeriod=5
-# Ceil=80
-# Floor=20
-# MoveStopLoss=30
-# KBar_dic['RSI']=RSI(KBar_dic,timeperiod=RSIPeriod)
-# KBar_dic['Ceil']=np.array([Ceil]*len(KBar_dic['time']))
-# KBar_dic['Floor']=np.array([Floor]*len(KBar_dic['time']))
 
-# #### 將K線 Dictionary 轉換成 Dataframe
-# KBar_RSI_df=pd.DataFrame(KBar_dic)
 
 
 ######  (iii) Bollinger Band (布林通道) 策略 
@@ -278,9 +257,9 @@ def Calculate_Bollinger_Bands(df, period=20, num_std_dev=2):
 
 #####  設定布林通道(Bollinger Band)相關參數:
 with st.expander("設定布林通道(Bollinger Band)相關參數:"):
-    # st.subheader("設定計算布林通道(Bollinger Band)上中下三通道之K棒週期數目(整數, 例如 20)")
+
     period = st.slider('設定計算布林通道(Bollinger Band)上中下三通道之K棒週期數目(整數, 例如 20)', 0, 100, 20, key='BB_period')
-    # st.subheader("設定計算布林通道(Bollinger Band)上中(或下中)通道之帶寬(例如 2 代表上中通道寬度為2倍的標準差)")
+    
     num_std_dev = st.slider('設定計算布林通道(Bollinger Band)上中(或下中)通道之帶寬(例如 2 代表上中通道寬度為2倍的標準差)', 0, 100, 2, key='BB_heigh')
 
 ##### 計算布林通道上中下通道:
