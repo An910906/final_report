@@ -46,16 +46,15 @@ choices = ['鴻海: 2020.1.1 至 2024.4.30', '聯發科: 2020.1.1 至 2024.4.30'
 choice = st.selectbox('選擇金融商品', choices, index=0)
 ##### 读取Pickle文件
 if choice == '鴻海: 2020.1.1 至 2024.4.30':
-    df_original = load_data('kbars_2317_2020-01-01-2024-04-30')
-     
+    df_original = load_data('kbars_2317_2020-01-01-2024-04-30.pkl')
 if choice == '聯發科: 2020.1.1 至 2024.4.30':
-    df_original = load_data('kbars_2454_2020-01-01-2024-04-30')
+    df_original = load_data('kbars_2454_2020-01-01-2024-04-30.pkl')
 if choice == '廣達電: 2020.1.1 至 2024.4.30':
-    df_original = load_data('kbars_2382_2020-01-01-2024-04-30')
+    df_original = load_data('kbars_2382_2020-01-01-2024-04-30.pkl')
 if choice == '聯華電:2020.1.1 至 2024.4.30':
-    df_original = load_data('kbars_2303_2020-01-01-2024-04-30')
+    df_original = load_data('kbars_2303_2020-01-01-2024-04-30.pkl')
 if choice == '大立光電:2020.1.1 至 2024.4.30':
-    df_original = load_data('kbars_3008_2020-01-01-2024-04-30')
+    df_original = load_data('kbars_3008_2020-01-01-2024-04-30.pkl')
 
 
 
